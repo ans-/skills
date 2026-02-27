@@ -62,7 +62,7 @@ Generate a `story.json` file with this structure:
 
 ```json
 {
-  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "id": "a9108b2f-7a01-4ba2-bc13-278b0a3fd75e",
   "title": "绘本标题",
   "subtitle": "一句话描述故事主题",
   "cover_image": "cover.png",
@@ -83,7 +83,7 @@ Generate a `story.json` file with this structure:
 
 ### Fields
 
-- `id`: UUID v4 format (e.g., "550e8400-e29b-41d4-a716-446655440000")
+- `id`: UUID v4 format. Generate with: `bash scripts/generate_uuid.sh`
 - `title`: Main story title
 - `subtitle`: Short phrase describing the theme (e.g., "一个关于勇气与爱的故事")
 - `cover_image`: Filename of cover illustration
