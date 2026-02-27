@@ -45,7 +45,14 @@ Confirm these parameters before generating:
 2. **Opening** (1-2 pages): Introduce characters and setting
 3. **Development** (2-4 pages): Build the story, introduce conflict
 4. **Climax** (1-2 pages): Peak of the story
-5. **Resolution** (1 page): Conclusion with positive message
+5. **Resolution** (1-2 page): Conclusion with positive message
+
+> [!NOTE]
+> **Idiom (成语) Storybooks**: The last 1-2 pages should explain:
+>
+> - The moral/lesson of the idiom story (寓意)
+> - The meaning of the idiom (含义)
+> - Usage examples in daily life (用法, optional)
 
 For detailed page templates by count (4/6/10 pages), see [references/story-templates.md](references/story-templates.md).
 
