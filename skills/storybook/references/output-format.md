@@ -114,6 +114,8 @@ Generate a `story.json` file with this structure:
 | `Story`     | Narrative-driven tales with engaging plot development                     |
 | `Idiom`     | Chinese idioms (成语) — cultural wisdom and moral lessons                 |
 | `Fable`     | Fables and parables (寓言) — life lessons through allegory                |
+| `Bedtime`   | Calming, soothing stories designed to help children wind down and sleep   |
+| `English`   | English language learning — vocabulary, phrases, and language exposure    |
 
 ### JSON Format Requirements
 
