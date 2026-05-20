@@ -23,6 +23,10 @@ The dataset uses English keys:
 | `author` | dynasty and author |
 | `content` | poem text with line breaks |
 
+## Image Size Standard
+
+All generated poem posters should target `1024 x 1536 px` in a portrait `2:3` aspect ratio. Do not switch to square, landscape, or arbitrary long-scroll dimensions unless the user explicitly requests a different size.
+
 ## Workflow
 
 1. Resolve the poem by id or title:
@@ -44,9 +48,18 @@ The dataset uses English keys:
 
 3. Use the Codex image generation tool directly unless the user asks for deterministic HTML/SVG rendering.
 
-4. Save the chosen generated image to the requested path. If the user does not provide a filename, use the helper's `suggestedFilename`, where `a` means 上册 and `b` means 下册 for matched dataset poems. Fallback title-only prompts use `poem-<title>.png`.
+4. Use the standard image size for every generated poster:
+   - width: `1024`
+   - height: `1536`
+   - aspect ratio: `2:3`
+   - orientation: portrait
 
-5. Inspect the generated image before final response. Check at least:
+   If the image tool supports explicit size or aspect-ratio parameters, set them to these values. If it only accepts a prompt, keep the helper-generated size sentence in the prompt.
+
+5. Save the chosen generated image to the requested path. If the user does not provide a filename, use the helper's `suggestedFilename`, where `a` means 上册 and `b` means 下册 for matched dataset poems. Fallback title-only prompts use `poem-<title>.png`.
+
+6. Inspect the generated image before final response. Check at least:
+   - image is portrait and close to the standard `1024 x 1536` / `2:3` target
    - title and author when known
    - id, grade, and semester only for poems found in the bundled dataset
    - poem text is present and not cropped

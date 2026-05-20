@@ -7,6 +7,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const skillDir = path.resolve(__dirname, "..");
 const dataPath = path.join(skillDir, "references", "primary-poems.json");
 const poems = JSON.parse(fs.readFileSync(dataPath, "utf8"));
+const imageSpec = {
+  width: 1024,
+  height: 1536,
+  aspectRatio: "2:3",
+  orientation: "portrait",
+};
+const imageSpecPrompt = `Target image size: ${imageSpec.width} x ${imageSpec.height} px. Aspect ratio: ${imageSpec.aspectRatio} ${imageSpec.orientation}. Use this exact canvas size when the image tool supports explicit dimensions; otherwise state this target clearly in the prompt and avoid square, landscape, or cropped layouts.`;
 
 const args = process.argv.slice(2);
 const promptMode = args.includes("--prompt");
@@ -47,6 +54,7 @@ if (!match) {
       found: false,
       title: query,
       suggestedFilename: `poem-${normalize(query) || "untitled"}.png`,
+      imageSpec,
     };
 
     if (!promptMode) {
@@ -55,6 +63,8 @@ if (!match) {
     }
 
     console.log(`Generate a high-resolution vertical Chinese educational poster for an ancient poem lesson.
+
+${imageSpecPrompt}
 
 Poem lookup status:
 - The title "${query}" was not found in the bundled primary-poems.json dataset.
@@ -93,7 +103,7 @@ Do not invent grade, semester, textbook volume, or sequence number. Keep all Chi
 }
 
 const suggestedFilename = `${toGradeNumber(match.grade)}-${toSemesterCode(match.semester)}-${match.id}.png`;
-const result = { ...match, suggestedFilename };
+const result = { ...match, suggestedFilename, imageSpec };
 
 if (!promptMode) {
   console.log(JSON.stringify(result, null, 2));
@@ -101,6 +111,8 @@ if (!promptMode) {
 }
 
 console.log(`Generate a high-resolution vertical Chinese educational poster for a primary-school ancient poem lesson.
+
+${imageSpecPrompt}
 
 Poem metadata:
 - id: ${match.id}
