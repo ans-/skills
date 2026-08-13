@@ -21,6 +21,7 @@ skills/
 | storybook | 生成个性化儿童绘本，支持多种艺术风格和年龄适配 |
 | poem      | 根据小学古诗序号或名称生成古诗讲解图片，内置 112 首古诗数据，统一 1024x1536 竖版比例 |
 | xhs-travel-city | 根据城市名生成小红书旅行路线图、笔记文案，并在确认后发布 |
+| podcast-lang-mark | 根据 title/author/summary 给 xlsx 里的播客 show 标注 lang_target/lang_from 语言码、confidence，并写自动更新的 SQL 公式列，低置信行出复核清单 |
 
 ## 添加新技能
 
